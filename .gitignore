@@ -1,0 +1,11 @@
+# Ignore large model and video files
+ml/disease_model/disease_model.h5
+ml/fertilizer_model/fertilizer_model.pkl
+ml/crop_model/crop.pkl
+ecoapp/static/background.mp4
+ecoapp/static/video.mp4
+
+# Ignore other unwanted files
+*.log
+*.sqlite3
+__pycache__/
