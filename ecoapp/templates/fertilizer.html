@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fertilizer Recommendation</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <style>
+        body {
+            background-image: url('{% static "bg.png" %}');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding: 50px;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px #000;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #388E3C;
+        }
+
+        .container {
+            background: rgba(0, 100, 0, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 15px #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #caffca;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input[type="number"],
+        select {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ffffb3;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'index' %}" class="back-button">← Back</a>
+
+    <div class="container">
+        <h1>Fertilizer Recommendation</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Temperature (°C):</label>
+            <input type="number" name="temperature" step="0.1" required>
+
+            <label>Humidity (%):</label>
+            <input type="number" name="humidity" step="0.1" required>
+
+            <label>Moisture (%):</label>
+            <input type="number" name="moisture" step="0.1" required>
+
+            <label>Soil Type:</label>
+            <select name="soil" required>
+                <option value="Sandy">Sandy</option>
+                <option value="Loamy">Loamy</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Clayey">Clayey</option>
+            </select>
+
+            <label>Crop Type:</label>
+            <select name="crop" required>
+                <option value="Sugarcane">Sugarcane</option>
+                <option value="Cotton">Cotton</option>
+                <option value="Wheat">Wheat</option>
+                <option value="Maize">Maize</option>
+                <option value="Barley">Barley</option>
+                <option value="Rice">Rice</option>
+            </select>
+
+            <label>Nitrogen (N):</label>
+            <input type="number" name="nitrogen" required>
+
+            <label>Phosphorus (P):</label>
+            <input type="number" name="phosphorous" required>
+
+            <label>Potassium (K):</label>
+            <input type="number" name="potassium" required>
+
+            <button type="submit">Get Recommendation</button>
+        </form>
+
+        {% if prediction %}
+        <div class="output">
+            <strong>Recommended Fertilizer:</strong> {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

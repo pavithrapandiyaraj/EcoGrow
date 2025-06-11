@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation Form</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <style>
+        body {
+            background-image: url('{% static "bg.png" %}');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding: 50px;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px #000;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #388E3C;
+        }
+
+        .container {
+            background: rgba(0, 100, 0, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 15px #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #caffca;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ffffb3;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'index' %}" class="back-button">← Back</a>
+
+    <div class="container">
+        <h1>Crop Recommendation Form</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="N">Nitrogen (N):</label>
+            <input type="number" name="N" required>
+
+            <label for="P">Phosphorus (P):</label>
+            <input type="number" name="P" required>
+
+            <label for="K">Potassium (K):</label>
+            <input type="number" name="K" required>
+
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" step="any" name="temperature" required>
+
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" step="any" name="humidity" required>
+
+            <label for="ph">pH Level:</label>
+            <input type="number" step="any" name="ph" required>
+
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="number" step="any" name="rainfall" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="output">
+            {% if prediction %}
+                <h3>Recommended Crop: {{ prediction }}</h3>
+            {% elif error %}
+                <h3>Error: {{ error }}</h3>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

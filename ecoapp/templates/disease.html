@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            background-image: url('/static/bg.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(0, 100, 0, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        h1 {
+            color: #caffca;
+            margin-bottom: 30px;
+        }
+
+        input[type="file"] {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            color: #333;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output {
+            margin-top: 30px;
+            background-color: #2d5f2d;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffcc;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="{% url 'index' %}">← Back</a>
+    <div class="container">
+        <h1>Upload Leaf Image</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image" accept="image/*" required><br>
+            <button type="submit">Predict Disease</button>
+        </form>
+
+        {% if prediction %}
+        <div class="output">
+            🌿 Predicted Disease: {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

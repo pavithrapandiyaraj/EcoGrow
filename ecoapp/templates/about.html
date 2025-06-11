@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Eco Grow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url("{% static 'bg.png' %}") no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+        .navbar {
+            background-color: rgba(0, 128, 0, 0.8);
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+            color: #ffeb3b !important;
+        }
+        .about-section {
+            background-color: rgba(0, 128, 0, 0.7);
+            padding: 60px 30px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">Eco Grow</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" width="25" height="25" style="margin-right:5px;" alt="User Icon">
+                        {{ user.username }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+<!-- About Section -->
+<div class="about-section">
+    <h1>About Eco Grow</h1>
+    <p>
+        Eco Grow is a smart agriculture platform that helps farmers and agricultural enthusiasts make informed decisions about crop selection, fertilizer usage, and plant disease detection. Our aim is to empower sustainable farming using technology, machine learning, and real-time data insights to improve yield and efficiency.
+    </p>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="{% static 'video.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
