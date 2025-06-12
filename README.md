@@ -30,20 +30,7 @@ Eco Grow is a sustainable, eco-friendly platform built using Django that recomme
 - Email: Gmail SMTP for Contact Form
 
 **📂 Project Structure**
-
-eco-grow/
-│
-├── ecoapp/              # Django App
-├── ml model/            # Machine Learning Models
-│   ├── crop_model/
-│   └── fertilizer_model/
-├── templates/           # HTML Templates
-├── static/              # CSS, JS, Images
-├── manage.py
-├── requirements.txt
-└── README.md
-   
-   
+![image](https://github.com/user-attachments/assets/a735d92e-45aa-4671-8936-cc0ff5ccd61c)
 
 
 
