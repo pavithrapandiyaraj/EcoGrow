@@ -55,13 +55,19 @@ Eco Grow is a sustainable, eco-friendly platform built using Django that recomme
 
 ![image](https://github.com/user-attachments/assets/c2d452e0-0c1a-427b-a376-f13c7b62afd5)
 
+**📧 Email- SMTP Configuration:**
+
 ![image](https://github.com/user-attachments/assets/71e00497-0fbb-4e53-91f8-9dc991e6e1e8)
 
 ![image](https://github.com/user-attachments/assets/732980d9-72a3-45d0-872e-9546dc32ec5f)
 
+![image](https://github.com/user-attachments/assets/e281436e-e5f4-4fbb-b2ac-64e44ed85440)
+
 **🌾 Crop Recommendation**
 
 ![image](https://github.com/user-attachments/assets/ead299df-ef95-4ba6-b591-246bd8092659)
+
+![image](https://github.com/user-attachments/assets/dc2aa08d-4895-4285-ae4d-b994009b6aea)
 
 **🧪 Fertilizer Recommendation**
 
