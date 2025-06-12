@@ -42,7 +42,7 @@ eco-grow/
 ├── manage.py
 ├── requirements.txt
 └── README.md
--   
+   
    
 
 
