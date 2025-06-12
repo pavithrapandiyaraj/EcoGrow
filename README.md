@@ -81,9 +81,17 @@ Eco Grow is a sustainable, eco-friendly platform built using Django that recomme
 
 ![image](https://github.com/user-attachments/assets/571697da-a024-4f90-a8a5-7bb8b47a9250)
 
+**📜 License**
 
+This project is licensed under the MIT License.
 
+**📞 Contact**
 
+**Author :** Pavithra Pandiyaraj
+
+**LinkedIn :** www.linkedin.com/in/pavithra-p-38769721b
+
+**Email :** pavithrapandiaraj20@gmail.com
 
 
 
