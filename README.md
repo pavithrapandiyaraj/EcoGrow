@@ -29,11 +29,20 @@ Eco Grow is a sustainable, eco-friendly platform built using Django that recomme
 - Machine Learning: Python (Scikit-Learn, Pandas, etc.)
 - Email: Gmail SMTP for Contact Form
 
-**💻 Installation**
-Clone the Repository:
-   git clone https://github.com/your-username/eco-grow.git
-   cd eco-grow 
-   -
+**📂 Project Structure**
+
+eco-grow/
+│
+├── ecoapp/              # Django App
+├── ml model/            # Machine Learning Models
+│   ├── crop_model/
+│   └── fertilizer_model/
+├── templates/           # HTML Templates
+├── static/              # CSS, JS, Images
+├── manage.py
+├── requirements.txt
+└── README.md
+-   
    
 
 
