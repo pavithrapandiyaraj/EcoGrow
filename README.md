@@ -20,7 +20,14 @@ Eco Grow is a sustainable, eco-friendly platform built using Django that recomme
 - Green Themed UI with Background Image 🎨
 - Admin Panel Management 📊 
 - Custom User Model Support🗂️ 
-- Background Video on Home Page🎥 
+- Background Video on Home Page🎥
+
+**🛠️ Tech Stack**
+  Backend: Django
+  Frontend: HTML, CSS, JavaScript, Bootstrap (Green Theme)
+  Database: SQLite (default)
+  Machine Learning: Python (Scikit-Learn, Pandas, etc.)
+  Email: Gmail SMTP for Contact Form
 
 
 
