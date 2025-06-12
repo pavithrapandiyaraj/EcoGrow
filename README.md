@@ -14,13 +14,13 @@ Eco Grow is a sustainable, eco-friendly platform built using Django that recomme
 
 - Crop Recommendation🌱
 - Fertilizer Recommendation🧪
-  🌾 Disease Prediction (Corn)
-  📋 User Authentication (Signup, Login, Logout)
-  📩 Contact Form with Email Integration
-  🎨 Green Themed UI with Background Image
-  📊 Admin Panel Management
-  🗂️ Custom User Model Support
-  🎥 Background Video on Home Page
+- Disease Prediction (Corn)🌾
+- User Authentication (Signup, Login, Logout)📋 
+- Contact Form with Email Integration 📩 
+- Green Themed UI with Background Image 🎨
+- Admin Panel Management 📊 
+- Custom User Model Support🗂️ 
+- Background Video on Home Page🎥 
 
 
 
